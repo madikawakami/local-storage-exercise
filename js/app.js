@@ -51,6 +51,11 @@
       render += "</div>"
       display_container.innerHTML = render;
       }
+    },
+    
+    clearEverything: function(){
+      localStorage.clear();
+      location.reload();
     }
   };
 
@@ -61,6 +66,10 @@
   //Clear User Input Function
   var clear = document.getElementById('clear');
     clear.addEventListener('click', handler.clearEntry);
+
+  //Clear All Entries
+  var clearAll = document.getElementById('clear_storage');
+    clearAll.addEventListener('click', handler.clearEverything);
 
   window.onload = function () {
     handler.displayEntry();
